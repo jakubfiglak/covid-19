@@ -9,6 +9,7 @@ export const theme = {
   success: '#55d85a',
   light: 400,
   bold: 600,
+  fontFamily: '\'Montserrat\', sans-serif',
   fontSize: {
     xxl: '3.4rem',
     xl: '2.4rem',
