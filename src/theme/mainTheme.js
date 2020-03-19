@@ -1,0 +1,20 @@
+export const theme = {
+  white: '#f7f7f7',
+  gray: '#abb4bd',
+  primary: '#ef3651',
+  background: '#1e1f28',
+  dark: '#2a2c36',
+  hot: '#ff3e3e',
+  error: '#ff2424',
+  success: '#55d85a',
+  light: 400,
+  bold: 600,
+  fontSize: {
+    xxl: '3.4rem',
+    xl: '2.4rem',
+    l: '1.8rem',
+    m: '1.6rem',
+    s: '1.4rem',
+    xs: '1.1rem',
+  },
+};
