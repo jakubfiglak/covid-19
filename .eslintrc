@@ -1,6 +1,8 @@
 {
   "extends": ["airbnb"],
+  "parser": "babel-eslint",
   "env": {
+    "browser": true,
     "jest": true
   },
   "globals": {
@@ -9,7 +11,9 @@
   "rules": {
     "react/jsx-filename-extension": [1, { "extensions": [".js"] }],
     "linebreak-style": 0,
-    "import/prefer-default-export": 0
+    "import/prefer-default-export": 0,
+    "radix": 0,
+    "react/state-in-constructor": 0
   },
   "settings": {
     "import/resolver": {

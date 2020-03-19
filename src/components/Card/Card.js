@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import CountUp from 'react-countup';
 
 const StyledCardWrapper = styled.div`
 width: 300px;
@@ -23,7 +24,9 @@ const StyledCardNumber = styled.p`
 const Card = ({ activeColor, text, number }) => (
   <StyledCardWrapper activeColor={activeColor}>
     <StyledCardHeading>{text}</StyledCardHeading>
-    <StyledCardNumber>{number}</StyledCardNumber>
+    <StyledCardNumber>
+      <CountUp end={parseInt(number)} duration={2} useEasing={false} />
+    </StyledCardNumber>
   </StyledCardWrapper>
 );
 
