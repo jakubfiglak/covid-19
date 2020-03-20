@@ -41,11 +41,12 @@ class Select extends Component {
 
   render() {
     const { countries } = this.state;
+    const { onChange } = this.props;
 
     return (
-      <StyledSelect>
+      <StyledSelect onChange={onChange}>
         {countries.map((country) => (
-          <option value={country}>{country}</option>
+          <option key={country} value={country}>{country}</option>
         ))}
       </StyledSelect>
     );

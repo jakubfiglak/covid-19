@@ -5,19 +5,24 @@ import { theme } from './theme/mainTheme';
 import Header from './components/Header/Header';
 import Select from './components/Select/Select';
 import CardSection from './components/CardSection/CardSection';
-
+import Spinner from './components/Spinner/Spinner';
 
 class App extends Component {
   state = {
-    countries: [],
+    country: 'Afghanistan',
+    data: [],
   }
 
   async componentDidMount() {
     const data = await this.fetchData();
     this.setState({
-      countries: data.Countries,
+      data: data.Countries,
     });
-    console.log(this.state.countries.filter((country) => country.Country === 'Poland'));
+  }
+
+  handleSelectChange = (e) => {
+    const country = e.target.value;
+    this.setState({ country });
   }
 
   fetchData = async () => {
@@ -26,15 +31,17 @@ class App extends Component {
     return data;
   }
 
-
   render() {
+    const { country, data } = this.state;
+    const selectedCountryData = data.filter((el) => el.Country === country);
+
     return (
       <ThemeProvider theme={theme}>
         <>
           <GlobalStyle />
           <Header />
-          <Select />
-          <CardSection />
+          <Select onChange={this.handleSelectChange} />
+          {data.length === 0 ? <Spinner /> : <CardSection data={selectedCountryData} />}
         </>
       </ThemeProvider>
     );

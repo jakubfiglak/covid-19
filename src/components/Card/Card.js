@@ -33,7 +33,7 @@ const Card = ({ activeColor, text, number }) => (
 Card.propTypes = {
   activeColor: PropTypes.oneOf(['dark', 'gray', 'error', 'success']),
   text: PropTypes.string.isRequired,
-  number: PropTypes.string.isRequired,
+  number: PropTypes.number.isRequired,
 };
 
 Card.defaultProps = {
