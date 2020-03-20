@@ -3,7 +3,7 @@ import { ThemeProvider } from 'styled-components';
 import GlobalStyle from './theme/GlobalStyle';
 import { theme } from './theme/mainTheme';
 import Header from './components/Header/Header';
-import SearchInput from './components/SearchInput/SearchInput';
+import Select from './components/Select/Select';
 import CardSection from './components/CardSection/CardSection';
 
 
@@ -17,7 +17,7 @@ class App extends Component {
     this.setState({
       countries: data.Countries,
     });
-    console.log(this.state.countries);
+    console.log(this.state.countries.filter((country) => country.Country === 'Poland'));
   }
 
   fetchData = async () => {
@@ -33,7 +33,7 @@ class App extends Component {
         <>
           <GlobalStyle />
           <Header />
-          <SearchInput placeholder="Search a country" />
+          <Select />
           <CardSection />
         </>
       </ThemeProvider>
